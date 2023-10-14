@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Razaa Cold Drinks</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200&family=Roboto&family=Rubik+Iso&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+    h1{
+        font-family: 'Nunito Sans', sans-serif;
+        font-family: 'Roboto', sans-serif;
+       font-family: 'Rubik Iso', cursive;
+       color: red;
+       padding-top: 20px;
+       padding-bottom: 20px;
+       background-color: rgb(174, 196, 166);
+       border-radius: 10px;
+      
+    }
+    input{
+        border-top: 0px;
+        border-left: 0px;
+        border-right: 0px;
+        border-bottom: 1px solid black;
+       
+    }
+</style>
+  </head>
+  <body>
+      <div class="container">
+        <h1 class="text-center">Razaa Cold Drinks</h1>
+        <div class="card">
+            <div class="card-header bg-black"></div>
+            <div class="card-body">
+          
+              <div class="container">
+                <div class="row">
+                  <div class="col-xl-12">
+                    
+                  </div>
+                </div>
+          
+          
+                <div class="row">
+                  <div class="col-xl-12">
+          
+                    <ul class="list-unstyled float-end">
+                      <li style="font-size: 30px; color: red;"><i class="fa-solid fa-shop pe-3"></i>Razaa & Co.</li>
+                      <li><i class="fa-solid fa-location-dot pe-3"></i>: Main City Mingora Swat</li>
+                      <li><i class="fa-solid fa-phone-volume pe-3"></i>:+923-447-4441043</li>
+                      <li><i class="fa-regular fa-envelope pe-3"></i>:Razaa11@mail.com</li>
+                    </ul>
+                  </div>
+                </div>
+          
+                <div class="row text-center">
+                  <h3 class="text-uppercase text-center mt-3" style="font-size: 40px;">Invoice</h3>
+                  <p>123456789</p>
+                </div>
+                <form action="{% url 'pdf' %}" method="post">
+                  {% csrf_token %}
+                <div class="row mx-3">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Description</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Quantity</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Coca Cola</td>
+                        <td> <i class="fas fa-dollar-sign"></i>100 </td>
+                        <td><input name="coka" type="number" class=""  required></td>
+                      </tr>
+                      <tr>
+                        <td>Pepsi</td>
+                        <td> <i class="fas fa-dollar-sign"></i>200</td>
+                        <td><input name="pepsi" type="number" class="" required ></td>
+                      </tr>
+                      <tr>
+                        <td>Sting</td>
+                        <td> <i class="fas fa-dollar-sign"></i>300 </td>
+                        <td><input name="sting" type="number" class="" required ></td>
+                      </tr>
+                      <tr>
+                        <td>Fanta</td>
+                        <td> <i class="fas fa-dollar-sign"></i>200</td>
+                        <td><input name="fanta" type="number" class=""  required></td>
+                      </tr>
+                    </tbody>
+                  </table>
+          
+                </div>
+               
+                
+                <div class="row mt-2 mb-5">
+                  <p class="fw-bold">Date: <span class="text-muted"><input name="dt" type="date" class="" required></span></p>
+                 
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg">Generate PDF</button>
+              
+            </form>
+          
+              </div>
+          
+          
+          
+            </div>
+            <div class="card-footer bg-black"></div>
+          </div>
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </body>
+</html>
